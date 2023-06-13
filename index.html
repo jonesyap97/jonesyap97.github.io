@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /* #container {
+        display: flex;
+      } */
+
+      #header {
+        display: flex;
+        flex-direction: column;
+        padding: 10px 20px;
+        font-size: 20px;
+        margin-bottom: 20px;
+        justify-content: center;
+        text-align: center;
+
+        /* background-color: #4caf50; */
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 18px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+		width:100%;
+      }
+
+      button:hover {
+        background-color: #327934;
+      }
+      @media (max-width: 768px) {
+        button {
+          font-size: 32px;
+          padding: 8px 16px;
+        }
+        .header {
+          font-size: 32px;
+          padding: 8px 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="header">
+        MFS Quality Campaign Quiz
+      </div>
+      <div>
+        <button id="randombutton">Click to start Quiz.</button>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    const el = document.getElementById("randombutton");
+    console.log(el);
+    el.addEventListener("click", redirectToRandomURL, false);
+
+    function redirectToRandomURL() {
+      // Define an array of URLs
+      var urlList = [
+        "https://www.example.com",
+        "http://mfstechnology.com/",
+        "https://metadms.com/"
+        // Add more URLs as needed
+      ];
+
+      // Get a random index from the array
+      var randomIndex = Math.floor(Math.random() * urlList.length);
+
+      // Redirect to the randomly chosen URL
+      window.location.href = urlList[randomIndex];
+    }
+  </script>
+</html>
